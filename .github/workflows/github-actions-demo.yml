@@ -21,11 +21,24 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
       - run: npm install
         working-directory: insecure
       - id: insecure-audit
         run: npm audit
         working-directory: insecure
+  mashup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: npm install
+        working-directory: mashup
+  unittesting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: npm install
+        working-directory: unittesting
+
+
