@@ -16,13 +16,17 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+  insecure:
+    steps:
       - run: npm install
         working-directory: ./insecure
       - id: insecure-audit
         run: npm audit
         working-directory: ./insecure
-    audit:
-        needs: insecure-audit
+  audit:
+    steps:
+      - name: fix-insecurity
+        needs: [insecure]
         if: ${{ failure() }}
         steps:
           - run: echo "fixing audit"
