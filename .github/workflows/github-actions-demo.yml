@@ -19,7 +19,9 @@ jobs:
   insecure:
     runs-on: ubuntu-latest
     steps:
-     - name: List files in the repository
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
       - run: npm install
@@ -27,10 +29,3 @@ jobs:
       - id: insecure-audit
         run: npm audit
         working-directory: insecure
-  audit:
-    runs-on: ubuntu-latest
-    needs: [insecure]
-    if: ${{ failure() }}
-    steps:
-      - run: echo "fixing audit"
-
