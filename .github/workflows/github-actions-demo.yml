@@ -26,6 +26,6 @@ jobs:
   audit:
     needs: [insecure]
     if: ${{ failure() }}
-      steps:
-        - run: echo "fixing audit"
+    steps:
+      - run: echo "fixing audit"
 
