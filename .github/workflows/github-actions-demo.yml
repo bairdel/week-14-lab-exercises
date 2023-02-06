@@ -18,5 +18,4 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: npm install
       - run: npm audit
-        with:
-          repository: insecure
+        working-directory: ./insecure
