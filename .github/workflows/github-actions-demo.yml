@@ -19,6 +19,9 @@ jobs:
   insecure:
     runs-on: ubuntu-latest
     steps:
+     - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
       - run: npm install
         working-directory: insecure
       - id: insecure-audit
