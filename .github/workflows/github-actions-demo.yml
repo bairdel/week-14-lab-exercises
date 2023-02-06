@@ -33,8 +33,6 @@ jobs:
         uses: actions/checkout@v3
       - run: npm install
         working-directory: mashup
-      - run: npm i lint
-        working-directory: mashup
       - run: npm run lint
         working-directory: mashup
   unittesting:
@@ -43,6 +41,8 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - run: npm install
+        working-directory: unittesting
+      - run: npm run test
         working-directory: unittesting
 
 
