@@ -36,6 +36,7 @@ jobs:
       - run: npm i lint
         working-directory: mashup
       - run: npm run lint
+        working-directory: mashup
   unittesting:
     runs-on: ubuntu-latest
     steps:
