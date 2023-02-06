@@ -24,9 +24,8 @@ jobs:
         run: npm audit
         working-directory: ./insecure
   audit:
-    - name: fix-insecurity
-      needs: [insecure]
-      if: ${{ failure() }}
+    needs: [insecure]
+    if: ${{ failure() }}
       steps:
         - run: echo "fixing audit"
 
