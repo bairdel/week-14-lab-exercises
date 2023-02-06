@@ -20,10 +20,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: npm install
-        working-directory: ./insecure
+        working-directory: insecure
       - id: insecure-audit
         run: npm audit
-        working-directory: ./insecure
+        working-directory: insecure
   audit:
     runs-on: ubuntu-latest
     needs: [insecure]
