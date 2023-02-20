@@ -44,5 +44,18 @@ jobs:
         working-directory: unittesting
       - run: npm run test
         working-directory: unittesting
+  combined:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: npm install
+        working-directory: combined
+      - run: npm audit
+        working-directory: combined
+      - run: npm run lint
+        working-directory: combined
+      - run: npm run test
+        working-directory: combined
 
 
