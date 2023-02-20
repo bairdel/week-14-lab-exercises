@@ -1,6 +1,5 @@
-const a = 'b';
 console.log("Hello this is mashup js");
-new Boolean myStatement;
+const myStatement = new Boolean(false);
 
 if (myStatement == false)
 
