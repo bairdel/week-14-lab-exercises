@@ -17,7 +17,7 @@ const generateHelloString = (language = "english") => {
       return "Bonjour";
       break;
     default:
-      throw RangeError(`Unknown language ${language}`);
+      throw RangeError("Unknown language ${language}");
   }
 }
 
