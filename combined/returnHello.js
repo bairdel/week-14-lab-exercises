@@ -18,7 +18,7 @@ const generateHelloString = (language = "english") => {
       //break;
     default:
       throw RangeError("Unknown language ${language}");
-  };
+  }
 };
 
 module.exports={generateHelloString};

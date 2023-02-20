@@ -1,7 +1,7 @@
 const hello = require('./returnHello.js');
 
 test("returns a valid English hello", () => {
-  expect(hello.generateHelloString('english')).toBe('Hello');
+  expect(hello.generateHelloString("english")).toBe("Hello");
 });
 
 test("returns a valid Gurmukhi hello", () => {
@@ -21,5 +21,5 @@ test("returns a valid French hello", () => {
 });
 
 test("Throws on unknown languages", () => {
-  expect(() => { hello.generateHelloString("norge") }).toThrow(Error("Unknown language norge"));
+  expect(() => { hello.generateHelloString("norge"); }).toThrow(Error("Unknown language norge"));
 });
